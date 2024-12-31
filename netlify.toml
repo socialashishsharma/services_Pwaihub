@@ -1,11 +1,11 @@
 [build]
-  command = "npm run build" # Replace with your app's build command
-  functions = ".netlify/v1/functions" # Path to your Netlify functions
-  publish = "build" # Folder containing your built frontend files
+  functions = "netlify/functions"
+  publish = "public"
+  command = "echo 'No build required'"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
 [dev]
